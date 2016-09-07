@@ -56,6 +56,9 @@
                                     <constraint firstAttribute="width" constant="172" id="jv3-sc-7eK"/>
                                 </constraints>
                                 <state key="normal" image="medal"/>
+                                <connections>
+                                    <action selector="onCoinPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uk1-Lg-fJV"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100 Taps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wev-8Y-ash" userLabel="tapsLbl">
                                 <rect key="frame" x="148" y="252" width="304" height="45"/>
