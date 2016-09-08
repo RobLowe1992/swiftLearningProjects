@@ -74,6 +74,5 @@ class ViewController: UIViewController {
         tapsLbl.text = ("\(currentTaps) Taps")
     }
 
-
 }
 
