@@ -8,71 +8,68 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
-    var maxTaps = 0
-    var currentTaps = 0
+var currentTaps = 0
+var maxTaps = 0
 
-    @IBOutlet weak var logoImg: UIImageView!
-    @IBOutlet weak var textfieldtxt: UITextField!
+    @IBOutlet weak var tapperLogo: UIImageView!
+    @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var playBtn: UIButton!
-    
-    @IBOutlet weak var tapBtn: UIButton!
+    @IBOutlet weak var coinBtn: UIButton!
     @IBOutlet weak var tapsLbl: UILabel!
-    
-    @IBAction func onCoinPress(sender: UIButton!) {
-    
-        currentTaps+=1
-        updateTapsLbl()
+
+    @IBAction func oncCoinPress(sender: UIButton!) {
+        currentTaps += 1
+        updateLbl()
         
         if isGameOver(){
             restartGame()
-        }
-    }
+        }}
     
-    @IBAction func onPlayButtonPressed(sender:UIButton!){
+    @IBAction func onPlayButtonPress(sender: UIButton!) {
         
-        if textfieldtxt.text != nil && textfieldtxt.text != "" {
-        
-        logoImg.hidden = true
-        textfieldtxt.hidden = true
+        if textfield.text != nil &&  textfield.text != "" {
+            
+        tapperLogo.hidden = true
+        textfield.hidden = true
         playBtn.hidden = true
         
+        coinBtn.hidden = false
         tapsLbl.hidden = false
-        tapBtn.hidden = false
             
-        maxTaps = Int(textfieldtxt.text!)!
+        maxTaps = Int(textfield.text!)!
         currentTaps = 0
-            
-        updateTapsLbl()
-    }
-      
+
+        updateLbl()
         
-    }
+        }
     
-    func restartGame() {
-        maxTaps = 0
-        textfieldtxt.text = ""
-        
-        logoImg.hidden = false
-        textfieldtxt.hidden = false
-        playBtn.hidden = false
-        
-        tapsLbl.hidden = true
-        tapBtn.hidden = true
-        
     }
+    func updateLbl() {
+            tapsLbl.text = ("\(currentTaps) Taps")
+}
     
     func isGameOver() -> Bool {
         if currentTaps >= maxTaps {
             return true
-        } else {
+        }
             return false
         }
+    
+    
+    func restartGame() {
+        
+        textfield.text = ""
+        maxTaps = 0
+        
+        tapperLogo.hidden = false
+        textfield.hidden = false
+        playBtn.hidden = false
+        
+        coinBtn.hidden = true
+        tapsLbl.hidden = true
+        
     }
-    func updateTapsLbl() {
-        tapsLbl.text = ("\(currentTaps) Taps")
-    }
-
 }
 

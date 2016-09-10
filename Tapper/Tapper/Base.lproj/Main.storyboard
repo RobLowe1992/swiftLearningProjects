@@ -37,6 +37,7 @@
                                 </constraints>
                                 <state key="normal" image="ticplay"/>
                                 <connections>
+                                    <action selector="onPlayButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m8q-YP-1JF"/>
                                     <action selector="onPlayButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="970-Tj-drz"/>
                                 </connections>
                             </button>
@@ -58,6 +59,7 @@
                                 <state key="normal" image="medal"/>
                                 <connections>
                                     <action selector="onCoinPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uk1-Lg-fJV"/>
+                                    <action selector="oncCoinPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R8v-wa-IZE"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100 Taps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wev-8Y-ash" userLabel="tapsLbl">
@@ -96,10 +98,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coinBtn" destination="id2-iN-Jw6" id="Cvr-7b-uRX"/>
                         <outlet property="logoImg" destination="Eh2-FN-z0Y" id="BnB-sf-MD9"/>
                         <outlet property="playBtn" destination="kMp-wP-7Pt" id="ioa-Ji-s45"/>
                         <outlet property="tapBtn" destination="id2-iN-Jw6" id="1aB-tJ-vFS"/>
+                        <outlet property="tapperLogo" destination="Eh2-FN-z0Y" id="cYA-Ur-O4E"/>
                         <outlet property="tapsLbl" destination="Wev-8Y-ash" id="kWY-9M-r3y"/>
+                        <outlet property="textfield" destination="YCS-pD-8JW" id="WK7-SS-knn"/>
                         <outlet property="textfieldtxt" destination="YCS-pD-8JW" id="cmI-vi-6ux"/>
                     </connections>
                 </viewController>
